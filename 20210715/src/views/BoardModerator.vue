@@ -7,27 +7,27 @@
 </template>
 
 <script>
-import UserService from "../services/user.service";
+import UserService from "../services/user.service"
 
 export default {
   name: "User",
   data() {
     return {
       content: ""
-    };
+    }
   },
   mounted() {
     UserService.getModeratorBoard().then(
       response => {
-        this.content = response.data;
+        this.content = response.data
       },
       error => {
         this.content =
           (error.response && error.response.data) ||
           error.message ||
-          error.toString();
+          error.toString()
       }
-    );
+    )
   }
-};
+}
 </script>
